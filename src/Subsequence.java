@@ -17,20 +17,21 @@ public class Subsequence {
     }
 
     public static int subsequence(String text1, String text2){
+
         int result=0;
         int size;
+        String temp;
 
-        if(text1.length()>text2.length()){
-            size=text1.length();
+        if(text1.length()<=text2.length()){
+            temp=text1;
         }else{
-            size=text2.length();
+            temp=text2;
         }
+        size=temp.length();
 
 
         for( int i = 0; i<size; i++){
-            if( text1.charAt(i) == text2.charAt(i)){
-                result++;
-            }
+
         }
 
         return result;

@@ -18,7 +18,7 @@ public class Subsequence {
 
     public static int subsequence(String text1, String text2){
         int result=0;
-        int size=0;
+        int size;
 
         if(text1.length()>text2.length()){
             size=text1.length();
@@ -28,7 +28,9 @@ public class Subsequence {
 
 
         for( int i = 0; i<size; i++){
-
+            if( text1.charAt(i) == text2.charAt(i)){
+                result++;
+            }
         }
 
         return result;

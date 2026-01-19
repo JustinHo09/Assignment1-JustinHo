@@ -19,9 +19,32 @@ public class Subsequence {
     public static int subsequence(String text1, String text2){
 
         int result=0;
+        String small;
+        String big;
+        String sub="";
 
-       
+        if(text1.length()<=text2.length()){
+            small=text1;
+            big=text2;
+        }else{
+            small=text2;
+            big=text1;
+        }
 
+        for(int i=0; i<small.length();i++){
+            boolean found=false;
+            int j=0;
+            while(!found && j<big.length()){
+                if(small.charAt(i) == big.charAt(j)){
+                    sub=sub + small.charAt(i);
+                    big=big.substring(j+1);
+                    found=true;
+                }else{
+                    j++;
+                }
+            }
+        }
+        result=sub.length();
         return result;
     }
 }

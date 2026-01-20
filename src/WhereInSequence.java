@@ -10,11 +10,19 @@ public class WhereInSequence {
         position(num);
     }
 
-    public static int position(long target){
-        NotFibonacci notFib= new NotFibonacci();
-
-        int result=0;
-
+    public static long position(long target){
+        NotFibonacci notFibon= new NotFibonacci();
+        boolean found=false;
+        long result=0;
+        int counter=1;
+        while(!found){
+            if(notFibon.notFib(counter)==target){
+                found=true;
+                result=counter-1;
+            }
+            counter++;
+        }
+        System.out.print("The output is: "+result);
         return result;
     }
 }

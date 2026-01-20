@@ -22,6 +22,7 @@ public class Subsequence {
         String small;
         String big;
 
+
         if(text1.length()<=text2.length()){
             small=text1;
             big=text2;
@@ -30,16 +31,28 @@ public class Subsequence {
             big=text1;
         }
 
-        int start=0;
-        for(int i=0; i<small.length();i++){
-            for( int j=start; j<big.length();j++){
-                if(small.charAt(i) == big.charAt(j)){
-                    result++;
-                    start=j+1;
-                    break;
-                }
-            }
+        int [] sizes= new int[small.length()];
 
+        for(int k=0; k<small.length();k++){
+            result=0;
+            int start = 0;
+            for (int i = k; i < small.length(); i++) {
+                for (int j = start; j < big.length(); j++) {
+                    if (small.charAt(i) == big.charAt(j)) {
+                        result++;
+                        start = j + 1;
+                        break;
+                    }
+                }
+
+            }
+            sizes[k]=result;
+        }
+
+        for(int i=0; i<sizes.length;i++){
+            if(sizes[i] > result){
+                result=sizes[i];
+            }
         }
         return result;
     }

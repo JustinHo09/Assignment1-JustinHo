@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NotFibbonacci {
+public class NotFibonacci {
 
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class NotFibbonacci {
         long [] terms= new long[term+1];
         long a=0;
         long b=2;
-        String sequence= "The NotFibbonacci sequence is: ";
+        String sequence= "The NotFibonacci sequence is: ";
         if(term == 0){
             terms[0]=a;
             System.out.println(sequence + a+".");

@@ -7,8 +7,8 @@ public class NotFibonacci {
         System.out.println("Please enter how many terms of the Not Fibonacci " +
                 "sequence you want to see:");
         int num= scan.nextInt();
-        //recFib(num);
-        notFib(num);
+        recFib(num);
+        //notFib(num);
 
     }
 
@@ -49,13 +49,13 @@ public class NotFibonacci {
 
     public static long recFib(long term){
         if(term<=1){
-            System.out.println(0);
+            //System.out.println(0);
             return 0;
         }else if(term ==2){
-            System.out.println(2);
+            //System.out.println(2);
             return 2;
         }
-        System.out.println(((3*(recFib(term-1)))/2)+(2*(recFib(term-2))));
+        //System.out.println(((3*(recFib(term-1)))/2)+(2*(recFib(term-2))));
         return ((3*(recFib(term-1)))/2)+(2*(recFib(term-2)));
     }
 }

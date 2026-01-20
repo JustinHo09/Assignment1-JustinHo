@@ -15,10 +15,9 @@ public class WhereInSequence {
         boolean found=false;
         long result=0;
         int counter=1;
-        long current;
+        long current=notFibon.notFib(counter);;
         long next;
         while(!found){
-            current=notFibon.notFib(counter);
             next=notFibon.notFib(counter+1);
             if(current==target){
                 found=true;
@@ -32,6 +31,7 @@ public class WhereInSequence {
                     result=counter;
                 }
             }
+            current=next;
             counter++;
         }
         System.out.print("The closest value is at index: "+result);

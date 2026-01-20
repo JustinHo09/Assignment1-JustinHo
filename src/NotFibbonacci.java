@@ -22,7 +22,21 @@ public class NotFibbonacci {
         }else{
             terms[0]=a;
             terms[1]=b;
-        } 
+        }
+        if(term > 1){
+            for( int i=2; i<=term; i++){
+                current= ((3*b)/2) + (2*a);
+                terms[i] = current;
+                a=b;
+                b=current;
+            }
+        }
+
+        for(int j=0;j<terms.length;j++){
+
+            sequence= sequence + terms[j] + ", ";
+
+        }
 
         System.out.println(sequence);
         return terms;

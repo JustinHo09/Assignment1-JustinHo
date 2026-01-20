@@ -19,6 +19,8 @@ public class NotFibbonacci {
         String sequence= "The NotFibbonacci sequence is: ";
         if(term == 0){
             terms[0]=a;
+            System.out.println(sequence + a+".");
+            return terms;
         }else{
             terms[0]=a;
             terms[1]=b;

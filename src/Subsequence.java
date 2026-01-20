@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Subsequence {
@@ -19,26 +20,25 @@ public class Subsequence {
     public static int subsequence(String text1, String text2){
 
         int result=0;
-        String small;
-        String big;
-
+        char [] small;
+        char [] big;
 
         if(text1.length()<=text2.length()){
-            small=text1;
-            big=text2;
+            small=text1.toCharArray();
+            big=text2.toCharArray();
         }else{
-            small=text2;
-            big=text1;
+            small=text2.toCharArray();
+            big=text1.toCharArray();
         }
 
-        int [] sizes= new int[small.length()];
+        int [] sizes= new int[small.length];
 
-        for(int k=0; k<small.length();k++){
+        for(int k=0; k<small.length;k++){
             result=0;
             int start = 0;
-            for (int i = k; i < small.length(); i++) {
-                for (int j = start; j < big.length(); j++) {
-                    if (small.charAt(i) == big.charAt(j)) {
+            for (int i = k; i < small.length; i++) {
+                for (int j = start; j < big.length; j++) {
+                    if (small [i] == big [j]) {
                         result++;
                         start = j + 1;
                         break;

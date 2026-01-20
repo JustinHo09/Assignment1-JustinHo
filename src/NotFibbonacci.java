@@ -16,7 +16,15 @@ public class NotFibbonacci {
         long [] terms= new long[term+1];
         long a=0;
         long b=2;
-       
+        String sequence= "The NotFibbonacci sequence is: ";
+        if(term == 0){
+            terms[0]=a;
+        }else{
+            terms[0]=a;
+            terms[1]=b;
+        } 
+
+        System.out.println(sequence);
         return terms;
 
     }

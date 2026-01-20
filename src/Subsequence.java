@@ -21,7 +21,6 @@ public class Subsequence {
         int result=0;
         String small;
         String big;
-        String sub="";
 
         if(text1.length()<=text2.length()){
             small=text1;
@@ -36,7 +35,7 @@ public class Subsequence {
             int j=0;
             while(!found && j<big.length()){
                 if(small.charAt(i) == big.charAt(j)){
-                    sub=sub + small.charAt(i);
+                    result++;
                     big=big.substring(j+1);
                     found=true;
                 }else{
@@ -44,7 +43,6 @@ public class Subsequence {
                 }
             }
         }
-        result=sub.length();
         return result;
     }
 }

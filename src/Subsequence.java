@@ -48,9 +48,9 @@ public class Subsequence {
             sizes[k]=result;
         }
 
-        for(int i=0; i<sizes.length;i++){
-            if(sizes[i] > result){
-                result=sizes[i];
+        for(int p=0; p<sizes.length;p++){
+            if(sizes[p] > result){
+                result=sizes[p];
             }
         }
         return result;

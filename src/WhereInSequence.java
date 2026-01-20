@@ -11,7 +11,7 @@ public class WhereInSequence {
     }
 
     public static int position(long target){
-        NotFibbonacci notFib= new NotFibbonacci();
+        NotFibonacci notFib= new NotFibonacci();
 
         int result=0;
 

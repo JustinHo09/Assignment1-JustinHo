@@ -30,18 +30,16 @@ public class Subsequence {
             big=text1;
         }
 
+        int start=0;
         for(int i=0; i<small.length();i++){
-            boolean found=false;
-            int j=0;
-            while(!found && j<big.length()){
+            for( int j=start; j<big.length();j++){
                 if(small.charAt(i) == big.charAt(j)){
                     result++;
-                    big=big.substring(j+1);
-                    found=true;
-                }else{
-                    j++;
+                    start=j+1;
+                    break;
                 }
             }
+
         }
         return result;
     }

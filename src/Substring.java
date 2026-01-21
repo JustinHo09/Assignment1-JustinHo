@@ -29,9 +29,27 @@ public class Substring {
             big=text1.toCharArray();
         }
 
+        for (int i = 0; i < small.length; i++) {
 
+            for (int j = 0; j < big.length; j++) {
 
-        
+                String temp = "";
+
+                if (small[i] == big[j]){
+                    count=0;
+
+                    while(i+count< small.length && j+count< big.length &&
+                            small[i+count] == big[j+count]) {
+
+                        temp = temp + small[i + count];
+                        count++;
+                    }
+                    if(temp.length()>longest.length()){
+                        longest=temp;
+                    }
+                }
+            }
+        }
 
         System.out.println(longest);
         return longest;

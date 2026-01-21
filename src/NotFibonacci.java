@@ -15,7 +15,7 @@ public class NotFibonacci {
     public static long notFib(int term){
 
         long current=0;
-        long [] terms= new long[term];
+        long [] terms= new long[term]; //S(n)
         long a=0;
         long b=2;
         String sequence= "The NotFibonacci sequence is: ";
@@ -45,17 +45,5 @@ public class NotFibonacci {
         System.out.println(sequence);
         return current;
 
-    }
-
-    public static long recFib(long term){
-        if(term<=1){
-            //System.out.println(0);
-            return 0;
-        }else if(term ==2){
-            //System.out.println(2);
-            return 2;
-        }
-        //System.out.println(((3*(recFib(term-1)))/2)+(2*(recFib(term-2))));
-        return ((3*(recFib(term-1)))/2)+(2*(recFib(term-2)));
     }
 }

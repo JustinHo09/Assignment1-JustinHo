@@ -7,8 +7,7 @@ public class NotFibonacci {
         System.out.println("Please enter how many terms of the Not Fibonacci " +
                 "sequence you want to see:");
         int num= scan.nextInt();
-        recFib(num);
-        //notFib(num);
+        notFib(num);
 
     }
 

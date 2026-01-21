@@ -17,6 +17,23 @@ public class Substring {
     public static String substring(String text1, String text2){
         String longest="";
 
+        char [] small;
+        char [] big;
+        int count;
+
+        if(text1.length()<=text2.length()){
+            small=text1.toCharArray();
+            big=text2.toCharArray();
+        }else{
+            small=text2.toCharArray();
+            big=text1.toCharArray();
+        }
+
+
+
+        
+
+        System.out.println(longest);
         return longest;
     }
 }

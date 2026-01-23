@@ -3,13 +3,13 @@ public class RemoveElements {
     public static void main(String [] args){
         double[] test= {0,5,8,10,12,54,-9,3,12,-43,345,54,-98,15};
         int target=12;
-        int num=removeElement(test,target);
         String input="Input array: ";
         for(int i=0;i<test.length;i++){
             input= input + test[i]+", ";
         }
         System.out.println(input);
         System.out.println("Input target: "+ target);
+        int num=removeElement(test,target);
         System.out.println("Output: There are : "+num+" elements >= "+target);
         String post="This is what nums  look like after: ";
         for(int i=0;i<test.length;i++){

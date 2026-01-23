@@ -32,12 +32,13 @@ have a complexity of O(2n), O(2m), S(2n), and S(2m) because the size of the arra
 size of its text, and the same logic for the toCharArray. Since they are reliant on the texts which
 have a size of m or n then their complexity is such. They also happen in sequence so its complexity
 would be O(2n+2m) and S(2n+2m) which is lower order compared the the nested loop's time complexity
-so it is dropped. So this algorithm has O(n^2 *m).
+so it is dropped. So this algorithm has O(n^2 *m) all other statements that affect time complexity
+are lower order than this.
 
-    This algorithm also has a time complexity of Ω(n^2 *m) because no matter the size of the texts, it will
-always run through the nested loop sequences, which as we explained before is the most significant
-order in time complexity and is O(n^2*m), with the other loops and variable declarations and assignments
-are lower order and are dropped.
+    This algorithm also has a best case time complexity of Ω(n^2 *m) because no matter the size of the
+texts, it will  always run through the nested loop sequences, which as we explained before is the most
+significant order in time complexity and is O(n^2*m), with the other loops and variable declarations
+and assignments are lower order and are dropped.
 
     This algorithm has a auxiliary space complexity of S(n^2) in the worst case scenario, where n is
 small.length because in the nested for loop structure, as I previously explained the inner loop creates

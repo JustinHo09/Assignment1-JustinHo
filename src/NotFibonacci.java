@@ -9,7 +9,7 @@ public class NotFibonacci {
         int num= scan.nextInt();
         System.out.println("Input: "+ num);
         if(num>0) {
-            System.out.print("The NotFibonacci sequence is: ");
+            System.out.print("Output: The NotFibonacci sequence is: ");
         }
         notFib(num);
 

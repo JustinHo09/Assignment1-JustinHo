@@ -29,11 +29,9 @@ public class Substring {
             small=text2.toCharArray();
             big=text1.toCharArray();
         }
-        
-
         String temp;
 
-        //
+        
         for (int i = 0; i < small.length; i++) {
 
             for (int j = 0; j < big.length; j++) {

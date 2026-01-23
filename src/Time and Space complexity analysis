@@ -35,7 +35,8 @@ would be O(2n+2m) and S(2n+2m) which is lower order compared the the nested loop
 so it is dropped. So this algorithm has O(n^2 *m) all other statements that affect time complexity
 are lower order than this.
 
-    This algorithm also has a best case time complexity of Ω(n^2 *m) because no matter the size of the
+    This algorithm also has a best case time complexity of Ω(n^2 *m), where n is the length of the smaller
+text, small.length, and m is hte complexity of the larger text, big.length ,because no matter the size of the
 texts, it will  always run through the nested loop sequences, which as we explained before is the most
 significant order in time complexity and is O(n^2*m), with the other loops and variable declarations
 and assignments are lower order and are dropped.
@@ -71,21 +72,21 @@ initializing it happens once so it has a constant time complexity and is lower o
 operations happening n times. So the loop itself has a complexity of O(n) and S(1), since it is
 declared once. The second for loop declares and initializes an integer j, compares j to big.length
 and increments it m times,since it will go until j<m if false, and m is big.length.
-Using similar logic to the previous loop, this loop itself is O(m).
-The body of the inner for loop assigns a predeclared variable a value, then checks an if
-condition, which both have a total complexity of O(1) since it is just retrieving, updating, or comparing values.
-In the worst case the if statement is taken because there are more operations that affect time and
-space in it. This body assigns the integer variable count to 0, has an if statement to compare length
-of two strings, and has a while loop inside, which will only stop if at least one of three conditions
-are not met. These conditions are i + count < small.length, j + count < big.length, and
-small[i+count] == big[j+count]. Since the loop stops when one of these conditions are not met, the number
-of time the loop runs is limited by the small.length or big.length. It is not limited by the last
-condition because the while loop would always be taken in the worst case, which is if every character
-is the same for both since that would make the while loop run until it reaches the end of the strings,
-which is is also when either i + count < small.length or j + count < big.length. So the while loop is
-limited by the minimum between small.length and big.length. The body of the while loop just increments
-count, and concatenates temp with the current character being evaluated, small[i+count]. Count's increment
-is constant in time and space since it is happening once, so it is O(1) and S(1). The concatenation of
+Using similar logic to the previous loop, this loop itself is O(m). The body of the inner for loop
+assigns a predeclared variable a value, then checks an if condition, which both have a total complexity
+of O(1) since it is just retrieving, updating, or comparing values. In the worst case the if statement
+is taken because there are more operations that affect time and space in it. This body assigns the
+integer variable count to 0, has an if statement to compare length of two strings, and has a while
+loop inside, which will only stop if at least one of three conditions are not met. These conditions
+are i + count < small.length, j + count < big.length, and small[i+count] == big[j+count]. Since the
+loop stops when one of these conditions are not met, the number of time the loop runs is limited by
+the small.length or big.length. It is not limited by the last condition because the while loop would
+always be taken in the worst case, which is if every character is the same for both since that would
+make the while loop run until it reaches the end of the strings, which is is also when either
+i + count < small.length or j + count < big.length. So the while loop is limited by the minimum
+between small.length and big.length. The body of the while loop just increments count, and
+concatenates temp with the current character being evaluated, small[i+count]. Count's increment is
+constant in time and space since it is happening once, so it is O(1) and S(1). The concatenation of
 temp, has a time and space complexity of O(n) and S(n) since it creates a new string, whose size is
 dependent on the combined size of both strings being concatenated, and it also copies all characters
 of both strings into one new string, and it specifically happens from small and n is small.length.
@@ -116,18 +117,16 @@ Case 2: the while loop is limited by m, big.length, so min (m,n), where the maxi
 
 So the complexities are O(n^3 *m) and O(n^2 * m^2) respectively, but O(n^2*m^2) is greater than or
 equal to O(n^3*m). Rewriting the first complexity gives, O(n^2 *n * m), Both have n^2 so the only terms,
-left that can be used to compare their complexity is n*m or m^2, which is m*m.
-Since we know that m wil always be
-greater than or equal to n, n*m is always less than or equal to m^2. So in the worst case the time
-complexity will be O(n^2 * m^2). There are other variable updates, and declarations that only occur once
-and have a constant complexity, which are lower order compared to the loop's complexity.
-Additionally, initializing the small and big arrays to be one of the texts toCharArray, will make its
-size depend on the size of the text string and toCharArray is a method that has a time and space complexity
-of n since the size of what it is based off the input n for small and m for big, which means that
-it will have a complexity of O(2n+2m)
-and S(2n+2m), since those initialization occur consecutively meaning their complexities are added.
-The since the they happen consecutively with the loops, the complexity will be O(n^2 * m^2 +2n+2m), but
-lower order terms are dropped so it would just be O(n^2 * m^2).
+left that can be used to compare their complexity is n*m or m^2, which is m*m. Since we know that m will
+always be greater than or equal to n, n*m is always less than or equal to m^2. So in the worst case the
+time complexity will be O(n^2 * m^2). There are other variable updates, and declarations that only
+occur once and have a constant complexity, which are lower order compared to the loop's complexity.
+Additionally, initializing the small and big arrays to be one of the texts toCharArray, will has a size
+that depends on the size of the text string and toCharArray is a method that has a time and space
+complexity of n since the size of what it is based off the input n for small and m for big, which means
+that it will have a complexity of O(2n+2m) and S(2n+2m), since those initialization occur consecutively
+meaning their complexities are added. The since the they happen consecutively with the loops, the
+complexity will be O(n^2 * m^2 +2n+2m), but lower order terms are dropped so it would just be O(n^2 * m^2).
 
     The best case scenario for time complexity of this algorithm is Ω(n*m), where n is small.length and m
 is big.length. The nest for loops are always taken no matter what, so as we found perviously the outer
@@ -167,27 +166,28 @@ So the reason the complexity of this is where the maximum of min(m,n) =m is beca
 complexity of S(n^2 *m), which is greater than S(n^3). This is because complexity when the maximum is
 n can be rewritten like such, S(n^2 *n). Since n^2 = n^2, the only only indication for that will affect
 space the most is m and n being multiplied to n^2. Since we know that m is generally the size of the
-big array and subsequently bigger string, m > n. So n^2*m is also greater than n^2 *n. Thus it has
-a space complexity of S(n^2 *m) for that loop. The outer most for loop has a space complexity of 1 since
-it is only creating i once, so it does not affect the space complexity of it. There are also other
-variable declarations which only happen once so they will have a constant space complexity and are
+big array and subsequently bigger string, m >= n. So n^2*m is also generally greater than n^2 *n. Thus
+it has a space complexity of S(n^2 *m) for that loop. The outer most for loop has a space complexity
+of 1 since it is only creating i once, so it does not affect the space complexity of it. There are also
+other variable declarations which only happen once so they will have a constant space complexity and are
 lower order compared to the loops complexity. The declaration and initialization of the two arrays
 to be the texts as character arrays gives them a total complexity of S(2n+2m) since the one of the
 arrays size is dependent on the size of text1 and the other on text2. Even so since they are
 happening is sequence the space complexity can be added to give S(n^2*m +2m+2n), but we drop lower
 order terms and constants which are 2n+2m. So overall it is S(n^2*m).
 
-    The best case for space complexity if S(n+m) because the declaration of the
-two arrays and initializing them to be the texts as an array of characters, small being the smaller
-text as an array and big being the bigger text as an array. So that means one array will have a space
-complexity of S(2n) and the other S(2m), since it is calling the toCharArray() method which does depend
-the size of the string, which is going to be m for the bigger one and n for the smaller one.
-Since they are consecutive statements we simply add their complexity so it will have a total complexity
-of S(2n+2m). The large loops sequence will not take the while loop in the best case since it creates
-a lot of space and is avoidable, but it will still go through both for loops. Since the first for loop
-is S(1) and the second one is declaring j n times, the total complexity of the loops is S(n). Since it
-is consecutive if we add it to the previous we get S(3n+2m), but since constants are dropped in
-complexity analysis, it is simple just S(n+m).
+    The best case for space complexity if S(n+m), where n is the length of the smaller string, small.length
+and m is the length of the bigger string, big.length, because the declaration of the two arrays and
+initializing them to be the texts as an array of characters, small being the smaller text as an array
+and big being the bigger text as an array. So that means one array will have a space complexity of S(2n)
+and the other S(2m), since it is calling the toCharArray() method which does depend the size of the
+string, which is going to be m for the bigger one and n for the smaller one. Since they are consecutive
+statements we simply add their complexity so it will have a total complexity of S(2n+2m). The large
+loops sequence will not take the while loop in the best case since it creates a lot of space and is
+avoidable, but it will still go through both for loops. Since the first for loop is S(1) and the
+second one is declaring j n times, the total complexity of the loops is S(n). Since it is consecutive
+if we add it to the previous we get S(3n+2m), but since constants are dropped in complexity analysis,
+it is simple just S(n+m).
 
 3) Not Fibonacci analysis
 
@@ -219,7 +219,7 @@ it takes is because both have the same time complexity. First, the comparison in
 is constant, so that is Ω(1). Then their bodies return a value, which is constant, and print a value
 which is always of a constant size no matter the input. So in total the if statements bodies in both
 have a constant complexity of Ω(1). So in total the if statement and its body has a time complexity
-that it Ω(1). It also does continue after the if statement in either case because there is a return
+that it Ω(1). It also doesn't continue after the if statement in either case because there is a return
 statement.
 
 
@@ -242,19 +242,18 @@ statements that declare variables, initialize variables, and returns variables o
 which are  all constant time and space operations since they also only occur once.
 The body of the while loop has many if statements, but all of them and their bodies just
 do comparisons or update values, which are all constant time and space complexity being O(1) and S(1),
-so the if statements have a total time and space complexity that is constant
-Then the body of the while loop also updates two variables, which again are constant operations and
-so are constant in time and space. The while loop has one more statement in the body, which is to
-update the value of next to be the result of the method call to notFib(), which itself has a time
-and space complexity of O(n) and S(n), where n is the same as we previously defines. This is because
-counter is updated each iteration of the loop and only stops when target is found or if the
-closest value to it is found. The while loop itself also follows the logic and will run until
-the the target value is found or the closest value to it is, which mean it will happen n times.
-So the complexity of the loop's body is O(n) since constant time operations are lower order than n
-and are dropped. The complexity of a loop is the complexity of the loop itself time its body, so in
-this since the loop runs n time its and its body has a complexity of n, the whole loop
-has a complexity of O(n^2). Since the time complexity of the others is constant and is smaller than
-O(n^2) and is dropped since it is a lower order.
+so the if statements have a total time and space complexity that is constant. Then the body of the
+while loop also updates two variables, which again are constant operations and so are constant in
+time and space. The while loop has one more statement in the body, which is to update the value of
+next to be the result of the method call to notFib(), which itself has a time and space complexity
+of O(n) and S(n), where n is the same as we previously defines. This is because counter is updated
+each iteration of the loop and only stops when target is found or if the closest value to it is found.
+The while loop itself also follows the logic and will run until the the target value is found or the
+closest value to it is, which mean it will happen n times. So the complexity of the loop's body is
+O(n) since constant time operations are lower order than n and are dropped. The complexity of a
+loop is the complexity of the loop itself time its body, so in this since the loop runs n time
+its and its body has a complexity of n, the whole loop has a complexity of O(n^2). Since the time
+complexity of the others is constant and is smaller than O(n^2) and is dropped since it is a lower order.
 
     The best case for time complexity of this is Ω(1), if the input, target, is less than or equal to 1.
 This is because in the shortest path the first if condition is true and enters the first body. The
@@ -298,14 +297,14 @@ until i<num.length is no longer true which will be after n iterations. So the lo
 time complexity of O(2n+2), which simplifies to O(n) since constants and lower order terms are dropped.
 Since those are happening in sequence then their total time complexity is their sum which is O(n+1),
 which is O(n) since lower order terms are dropped. The best case time complexity of this identical to
-the complexity for the worst case making it Ω(n), since no matter the input size of the array nums,
-it will always go through the for loop, the biggest factor for this time complexity so it will also
-have a complexity of n.
+the complexity for the worst case making it Ω(n), where n is the size of the input array nums, which
+is nums.length, since no matter the input size of the array nums, it will always go through the for
+loop, the biggest factor for this time complexity so it will also have a complexity of n.
 
     The worst and best case space complexity for this algorithm is S(1). This is because only two
 variables are declared k and then i in the loop itself. Since those variables are only declared once,
 then it has a space complexity of S(1). Also, there are statements that update or retrieve
-variables which are constant in space complexity. Since they are in sequence then the overall space
+variables which are constant in space complexity. Since they consecutive then the overall space
 complexity is their sum which is S(1+1), which is S(2), which simplifies to S(1) since constants are
 dropped. Since this happens every time not matter the input and not declared variable changes
 depending on the input, then this is the case for the best and worst case.

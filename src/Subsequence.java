@@ -12,12 +12,13 @@ public class Subsequence {
         text1=scan.nextLine();
         System.out.println("Please enter the second text:");
         text2=scan.nextLine();
+        System.out.println("Input: "+text1+ " & "+text2);
         System.out.println("Output: " +subsequence(text1,text2));
     }
 
     public static int subsequence(String text1, String text2){
 
-        int result=0; 
+        int result=0;
         char [] small;
         char [] big;
         int start;

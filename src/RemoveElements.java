@@ -11,6 +11,10 @@ public class RemoveElements {
         System.out.println(input);
         System.out.println("Input target: "+ target);
         System.out.println("Output: There are : "+num+" elements >= "+target);
+        String post="This is what nums  look like after: ";
+        for(int i=0;i<test.length;i++){
+            post= post + test[i]+", ";
+        }
     }
 
     public static int removeElement(double [] nums, double val){

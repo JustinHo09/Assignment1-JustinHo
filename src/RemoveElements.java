@@ -8,6 +8,7 @@ public class RemoveElements {
         for(int i=0;i<test.length;i++){
             input= input + test[i]+", ";
         }
+        System.out.println(input);
         System.out.println("Input target: "+ target);
         System.out.println("Output: There are : "+num+" elements >= "+target);
     }

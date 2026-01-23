@@ -11,7 +11,8 @@ public class Substring {
         text1=scan.nextLine();
         System.out.println("Please enter the second text:");
         text2=scan.nextLine();
-        substring(text1,text2);
+        System.out.println("Input: "+text1+ " & "+text2);
+        System.out.println("Output: "+substring(text1,text2));
     }
 
     public static String substring(String text1, String text2){
@@ -28,12 +29,16 @@ public class Substring {
             small=text2.toCharArray();
             big=text1.toCharArray();
         }
+        
 
+        String temp;
+
+        //
         for (int i = 0; i < small.length; i++) {
 
             for (int j = 0; j < big.length; j++) {
 
-                String temp = "";
+                temp = "";
 
                 if (small[i] == big[j]){
                     count=0;
@@ -50,8 +55,6 @@ public class Substring {
                 }
             }
         }
-
-        System.out.println(longest);
         return longest;
     }
 }

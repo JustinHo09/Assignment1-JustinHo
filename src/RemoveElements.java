@@ -9,7 +9,7 @@ public class RemoveElements {
             input= input + test[i]+", ";
         }
         System.out.println("Input target: "+ target);
-        System.out.println("There are : "+num+" elements >= "+target);
+        System.out.println("Output: There are : "+num+" elements >= "+target);
     }
 
     public static int removeElement(double [] nums, double val){

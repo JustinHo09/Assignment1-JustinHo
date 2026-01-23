@@ -15,6 +15,7 @@ public class RemoveElements {
         for(int i=0;i<test.length;i++){
             post= post + test[i]+", ";
         }
+        System.out.println(post);
     }
 
     public static int removeElement(double [] nums, double val){

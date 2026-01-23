@@ -6,6 +6,7 @@ public class WhereInSequence {
         System.out.println("Please enter a number you wish to locate, or find closes location" +
                 "to in the Not Fibonacci sequence:");
         long num = scan.nextLong();
+        System.out.println("Input is: "+num);
         System.out.print("Output: The closest value is at index: "+position(num));
     }
 
@@ -20,7 +21,7 @@ public class WhereInSequence {
         } else if(target > 0) {
             long current=2;
             while (!found) {
-                next = notFibon.notFib(counter + 1); 
+                next = notFibon.notFib(counter + 1);
                 if (current == target) {
                     found = true;
                     result = counter - 1;
